@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>{{singleItem.name}}</h1>
+    <div class="data">
+        <img src={{singleItem.img}} >
+        <div class="text">
+            <p class="heading">{{singleItem.name}}</p>
+            <p>{{singleItem.description}}</p>
+            <div class="offers">
+                <p class="price">Price: {{singleItem.price}}€</p>
+            </div>
+            <p class="weight">Weight: {{singleItem.weight}}kg</p>
+            <div class="functions">
+                <form class="fullForm">
+                    <div class="number">
+                        <label for="quantity">Enter quantity:</label>
+                        <input type="number" class="quantity" required value="1" [(ngModel)]="number" name="quantity" [ngClass]="{'red': missing==true}">
+                    </div>
+                    <label for="colorSelect">Choose a color:</label>
+                    <select name="color" [(ngModel)]="color">
+                        <option value="red">Red</option>
+                        <option value="green">Green</option>
+                        <option value="blue">Blue</option>
+                        <option value="black" selected>Black</option>
+                        <option value="white">white</option>
+                    </select>
+                    <button  class="green" (click)="addToCart(singleItem, number, color)" [ngClass]="{'grey': buy==true}" [disabled]="buy">Add to cart</button>
+                </form>
+            </div>            
+        </div>
+        <small class="hide" [ngClass]="{'show': buy==true}">Item was added to the cart</small>
+    </div>
+</div>

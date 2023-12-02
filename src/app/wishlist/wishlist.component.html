@@ -1,0 +1,14 @@
+<div class="container" *ngIf="show==true">
+    <div class="items" *ngFor="let cart of cartItems">
+        <img src={{cart.img}}>
+        <div class="text">
+            <p class="name">Name of product: {{cart.name}}</p>
+            <p class="price">Price: {{cart.price}}€</p>
+            <p class="description">Description: {{cart.description}}</p>
+            <button class="removeItem" (click)="removeItem(cart)">Remove from wishlist</button>
+        </div>
+    </div>  
+</div>
+<div class="emptyCart" *ngIf="show==false">
+    <p>No items on wishlist</p>
+</div>

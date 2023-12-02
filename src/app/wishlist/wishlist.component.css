@@ -1,0 +1,65 @@
+body,html{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+}
+.container{
+    overflow-y: visible;
+    position: relative;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 10px;
+    align-items: center;
+    gap: 1rem;
+    min-height: 100vh;
+    height: fit-content;
+    
+}
+.container .items{
+    border: 1px solid black;
+    display: flex;
+    gap: 1rem;
+    width: 90%;
+    background-color: rgb(210, 210, 210);
+}
+.container .items img{
+    width: 150px;
+}
+.container .items .text{
+    width: 100%;
+    position: relative;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.container .items .text button{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: red;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+}
+.container .items .text button:hover{
+    transform: scale(1.01);
+    cursor:pointer;
+}
+.container .buy{
+    position: relative;
+    margin-top: 5rem;
+    font-size: 20px;
+    padding: 10px;
+}
+
+/* if the shopping cart is empty */
+.emptyCart{
+    position: absolute;
+    transform: translate(90vh,20vh);
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

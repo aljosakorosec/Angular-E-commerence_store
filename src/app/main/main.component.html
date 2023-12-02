@@ -1,0 +1,66 @@
+<div class="container">
+  <!-- filter division -->
+  <div>
+    <i class="fa-solid fa-sort sort" (click)="toggle()"></i>
+    <div class="filter" *ngIf="show">
+      <h2>filter by:</h2>
+      <ul>
+        <li>
+          <p (click)="filterByName()">By name</p>
+          <i class="fa-solid fa-check" *ngIf="currentFilter === 'name'"></i>
+        </li>
+        <li>
+          <p (click)="filterByPrice()">By price</p> 
+          <i class="fa-solid fa-check" *ngIf="currentFilter === 'price'"></i>
+        </li>
+        <li>
+          <p (click)="filterByWeight()">By weight</p>
+          <i class="fa-solid fa-check" *ngIf="currentFilter === 'weight'"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <i class="fa-solid fa-magnifying-glass glass" (click)="toggleValue()"></i>
+  <input type="text" class="search" 
+  [ngClass]="{'show': value==true}"
+  [(ngModel)]="inputValue"
+  (keydown.enter)="searchData()">
+  <h4>Buy-get-enjoy</h4>
+  <h1>FIND <span>ANYTHING</span> WITH US</h1>
+  <div class="products" [ngClass]="{'blur': show==true}">
+    <!-- alert if item is bought -->
+    <div class="alert" *ngIf="display==true">
+      <h1>Item was put into the cart. Look in the cart for the item</h1>
+      <button class="close"  (click)="toggleAlert()">close</button>
+    </div>
+    <ul>
+      <li *ngFor="let product of products" >
+        <i class="fa-solid fa-cart-plus plus" (click)="addItem(product)"></i>
+         <!-- adding liked items -->
+         <div class="contain">
+          <div class="dontlike">
+            <i class="fa-regular fa-heart heart" (click)="hideItem(product)" [ngClass]="{'show': product.like==false}"></i>
+          </div>
+          <div class="like">
+            <i class="fa-solid fa-heart full" (click)="hideItemLike(product)" [ngClass]="{'show': product.like==true}"></i>
+          </div>
+        </div>
+        <a [routerLink]="['products', product.id]">
+          <div class="product" (click)="showItem(product)">
+           <img src={{product.img}} width="250" height="250">
+            <div class="text">
+              <p class="name">{{product.name}}</p>
+              <p class="price">{{product.price}}€</p>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+  
+  
+  
+ 
+  

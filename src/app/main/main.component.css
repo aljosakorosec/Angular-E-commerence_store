@@ -1,0 +1,237 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.container h4, .container h1{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 10px;
+    padding: 0;
+}
+.container h4{
+    color: rgb(96, 96, 96);
+    text-transform: uppercase;
+}
+.container h1 span{
+    color: red;
+}
+.container h1{
+    color: orange;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+/* products part of the page */
+.products{
+    display: flex;
+    width: 100%;
+}
+.products.blur{
+    filter: blur(10px);
+}
+.products ul{
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+.products ul li{
+    list-style-type: none;
+    width: 250px;
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 1px 1px 3px grey;
+}
+.products ul li:hover{
+    transform: scale(1.03);
+    transition-duration: .3s;
+    cursor: pointer;
+}
+.products ul li .text{
+    text-align: center;
+}
+.products ul li .text p{
+    margin: 10px;
+}
+.products ul li .text .name{
+    color: red;
+}
+/* add to cart  + full cart*/
+/* single cart */
+.products ul li .plus{
+    position:absolute;
+    font-size: 20px;
+    top: 1rem;
+    right: 1rem;
+}
+.products ul li .plus:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    color: orange;
+}
+/* styling like buttons + icons */
+.products ul li .text .like, .products ul li .text .dontlike{
+    position: absolute;
+    top: 2.5rem;
+    right: 1rem;
+}
+/* dont like button */
+.products ul li .contain .heart {
+    position: absolute;
+    right: 1rem;
+    top: 2.5rem;
+    font-size: 20px;
+    z-index: 2;
+    opacity: 1;
+}
+.products ul li .heart.show {
+    z-index: 1;
+    opacity: 1;  
+}
+.products ul li .contain .heart:hover {
+    transform: scale(1.1);
+}
+/* like button */
+.products ul li .like .full {
+    position: absolute;
+    right: 1rem;
+    top: 2.5rem;
+    z-index: 1;
+    font-size: 20px;
+    opacity: 0;
+}
+.products ul li .like .full.show {
+    opacity: 1;
+}
+.products ul li .like .full.show:hover {
+    transform: scale(1.1);
+}
+.products ul li .like .full:hover {
+   transform: scale(1.1);
+}
+/* hide container when an item is clicked */
+.container.hide{
+    background-color: red;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+/* SEARCH BUTTON */
+.search{
+    position: absolute;
+    top: 1.1rem;
+    left: -20rem;
+    opacity: 0;
+    z-index: 10;
+    padding: 5px;
+    font-size: 18px;
+}
+.search.show{
+    left: 3.8rem;
+    opacity: 1;
+    transition-duration: .2s;
+}
+.glass{
+    position: absolute;
+    top: 1.3rem;
+    left: 1.3rem;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 3;
+}
+.glass:hover{
+    font-size: 30px;
+}
+/* SORT ITEMS */
+.sort{
+    position: absolute;
+    top: 1.1rem;
+    left: 4rem;
+    font-size: 30px;
+}
+.sort:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+/* filter division */
+.container .sort{
+    z-index: 6;
+}
+.container .filter{
+    width: 40%;
+    height: fit-content;
+    min-height: 100%;
+    background-color: white;
+    border: .5px solid black;
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    text-transform: uppercase;
+}
+.container .filter ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style-type: none;
+}
+.container .filter ul li{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.container .filter ul li i{
+    color: rgb(0, 177, 0);
+}
+.container .filter ul li p:hover{
+    transform: scale(1.1);
+    font-weight: 600;
+    cursor: pointer;
+}
+/* alert when button is bought in the main folder */
+.products  .alert{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position:fixed;
+    top: 7rem;
+    left: 15rem;
+    width: 60%;
+    height: 15rem;
+    text-align: center;
+    z-index: 3;
+    color: black;
+    box-shadow: 1px 1px 5px black;
+    border: 1px solid black;
+    border-radius: 20px;
+    transition-duration: 1s;
+    background-color: white;
+}
+.products  .alert h1{
+    color: black;
+}
+.products .alert button{
+    width: 60%;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 4px;
+    border: .5px solid black;
+    cursor: pointer;
+}
+.products .alert button:hover{
+    opacity: .7;
+}

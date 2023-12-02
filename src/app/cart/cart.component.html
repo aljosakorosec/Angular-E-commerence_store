@@ -1,0 +1,17 @@
+<div class="container" *ngIf="show==true">
+    <div class="items" *ngFor="let cart of cartItems">
+        <img src={{cart[0].img}}>
+        <div class="text">
+            <p class="name">Name of product: {{cart[0].name}}</p>
+            <p class="price">Single item price: {{cart[0].price}}€</p>
+            <p class="Totalprice">Total Price: {{cart[0].price*cart[1]}}€</p>
+            <p class="quantity">Quantity: {{cart[1]}}</p>
+            <p class="color">Color: {{cart[2]}}</p>
+            <button class="removeItem" (click)="removeItem(cart)">Remove from cart</button>
+        </div>
+    </div>  
+    <button class="buy" [routerLink]="['payment']">BUY</button>
+</div>
+<div class="emptyCart" *ngIf="show==false">
+    <p>Shopping cart is empty</p>
+</div>

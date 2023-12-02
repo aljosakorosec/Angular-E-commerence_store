@@ -1,0 +1,30 @@
+.payment-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    
+}
+.payment-form h2{
+    font-size: 40px;
+}
+.payment-form form{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+    font-size: 25px;
+    border-radius: 10px;
+}
+.payment-form form div{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.payment-form form div input{
+   font-size: 18px;
+   padding: 5px;
+}

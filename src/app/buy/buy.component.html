@@ -1,0 +1,23 @@
+<div class="payment-form">
+    <h2>Payment Information</h2>
+    <form action="process-payment.php" method="POST">
+        <div class="form-group">
+            <label for="card-number">Card Number:</label>
+            <input type="text" name="card-number" required>
+        </div>
+        <div class="form-group">
+            <label for="expiration-date">Expiration Date:</label>
+            <input type="text" name="expiration-date" placeholder="MM/YY" required>
+        </div>
+        <div class="form-group">
+            <label for="cvv">CVV:</label>
+            <input type="text"  name="cvv" required>
+        </div>
+        <div class="form-group">
+            <label for="cardholder-name">Cardholder Name:</label>
+            <input type="text" name="cardholder-name" required>
+        </div>
+        <button type="submit" class="submit-button" (click)="show()">Submit Payment</button>
+    </form>
+    <p *ngIf="showIem==true">Payment successful</p>
+</div>
